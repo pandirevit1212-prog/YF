@@ -1,15 +1,20 @@
-name = "yf-app"
-main = "dist/index.js"
+name = "yf-e-c-app"
+main = "src/main.tsx"
 compatibility_date = "2024-01-01"
 
 [env.production]
-route = "example.com/*"
+route = "your-domain.com/*"
 zone_id = "your-zone-id"
 
 [build]
 command = "npm install && npm run build"
 cwd = "."
 outdir = "dist"
+root = "."
 
 [build.upload]
 format = "service-worker"
+
+[[env.production.routes]]
+pattern = "your-domain.com/*"
+zone_name = "your-domain.com"
